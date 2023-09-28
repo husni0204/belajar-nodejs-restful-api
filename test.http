@@ -1,0 +1,140 @@
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "husni",
+  "password" : "rahasia",
+  "name" : "Husni Mubarok"
+}
+
+### login 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "husni",
+  "password" : "rahasia"
+}
+
+###
+
+GET http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 61eaab73-ca34-49aa-b1a9-beafb6ff0b97
+
+###
+
+PATCH http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 61eaab73-ca34-49aa-b1a9-beafb6ff0b97
+
+{
+  "name" : "husni mubarok"
+}
+
+###
+
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: 61eaab73-ca34-49aa-b1a9-beafb6ff0b97
+
+### contacts
+
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+{
+  "first_name" : "Joko",
+  "last_name" : "Moro",
+  "email" : "joko@mail.com",
+  "phone" : "323232"
+}
+
+###
+GET http://localhost:3000/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+###
+GET http://localhost:3000/api/contacts/291
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+###
+PUT http://localhost:3000/api/contacts/291
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+{
+  "first_name": "Joni",
+  "last_name": "Manggala",
+  "email": "joni@mail.com",
+  "phone": "535353"
+}
+
+###
+DELETE http://localhost:3000/api/contacts/292
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+### Create Address
+
+POST http://localhost:3000/api/contacts/293/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+{
+  "street" : "Jalan Kantor",
+  "city" : "Bandung",
+  "province" : "Jawa Barat",
+  "country" : "Indonesia",
+  "postal_code" : "323232"
+}
+
+### List Address
+
+GET http://localhost:3000/api/contacts/293/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+### Get Address
+
+GET http://localhost:3000/api/contacts/293/addresses/58
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+### Get Address
+
+PUT http://localhost:3000/api/contacts/293/addresses/57
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
+
+{
+  "street": "Jalan Belum diaspal",
+  "city": "Kampung",
+  "province": "Jawa Barat",
+  "country": "Indonesia",
+  "postal_code": "53254"
+}
+
+### Remove Address
+
+DELETE http://localhost:3000/api/contacts/293/addresses/57
+Content-Type: application/json
+Accept: application/json
+Authorization: 9fe75d37-2daa-473f-82ce-ce38c7ec7194
